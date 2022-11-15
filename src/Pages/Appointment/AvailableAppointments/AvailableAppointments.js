@@ -1,4 +1,4 @@
-import { format, formatDistanceToNow } from 'date-fns';
+import { format } from 'date-fns';
 import React, { useEffect, useState } from 'react';
 import BookingModal from '../BookingModal/BookingModal';
 import AppointmentOption from './AppointmentOption';
@@ -26,7 +26,12 @@ const AvailableAppointments = ({ selectedDate }) => {
           ></AppointmentOption>
         ))}
       </div>
-      {treatment && <BookingModal treatment={treatment}></BookingModal>}
+      {treatment && (
+        <BookingModal
+          treatment={treatment}
+          selectedDate={selectedDate}
+        ></BookingModal>
+      )}
     </section>
   );
 };
